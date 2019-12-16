@@ -29,10 +29,12 @@ func TestReadDataFromPostgres(t *testing.T) {
 		panic(err)
 	}
 
-	fmt.Println("Connected to Postgres DB...!")
+	fmt.Println("Connected to Postgres DB...")
 
 	var codefreshUrl string
 	row := db.QueryRow(`SELECT url FROM link WHERE name=$1;`, "Codefresh")
+
+	fmt.Println("Reading Test data...")
 
 	switch err := row.Scan(&codefreshUrl); err {
 	case sql.ErrNoRows:
@@ -42,5 +44,7 @@ func TestReadDataFromPostgres(t *testing.T) {
 	if codefreshUrl != "http://www.codefresh.io" {
 		t.Errorf("Got = %s; want http://www.codefresh.io", codefreshUrl)
 	}
+
+	fmt.Println("Finished integration test")
 
 }

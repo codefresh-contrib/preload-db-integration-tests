@@ -42,6 +42,5 @@ steps:
       setup:
         image: 'postgres:11.5'
         commands:
-          - "ls /codefresh/volume"
           - "psql -h my_postgresql_db -U postgres < /codefresh/volume/preload-db-integration-tests/testdata/preload.sql"
         

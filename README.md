@@ -16,7 +16,7 @@ $ docker run -p 5432:5432 postgres:11.5
 Then open another terminal and load the test data after verifying that the database is up:
 
 ```
-$ pg_isready -h localhost
+$ pg_isready -h localhost -U postgres
 $ psql -h localhost -U postgres < testdata/preload.sql
 ```
 
@@ -33,7 +33,7 @@ $ go test -v
 1. Fork this project in your Github account
 1. Create a new pipeline with [codefresh.yml](codefresh.yml) 
 
-More information at the [documentation page](https://codefresh.io/docs/docs/yaml-examples/examples/populate-a-database-with-existing-data/)
+More information at the [documentation page](https://codefresh.io/docs/docs/yaml-examples/examples/populate-a-database-with-existing-data/).
 
 
 Enjoy!
