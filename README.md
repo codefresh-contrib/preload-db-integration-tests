@@ -7,7 +7,7 @@ The project contains tests and also an SQL file to preload the DB with test data
 
 ## Local usage
 
-You need to have docker, go and postgres-client installed on your workstation first.
+You need to have `docker`, `golang` and `postgres-client` installed on your workstation first.
 
 ```
 $ docker run -p 5432:5432 postgres:11.5
